@@ -1,25 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {HashRouter, Router, Link} from 'react-router-dom'
+import { Layout } from 'antd';
+
+const { Header, Footer, Sider, Content } = Layout;
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <HashRouter>
+        <div>
+          <Layout>
+            <Header>Header</Header>
+            <Content>Content</Content>
+            <Footer>Footer</Footer>
+          </Layout>
+
+          <Layout>
+            <Header>Header</Header>
+            <Layout>
+              <Sider>Sider</Sider>
+              <Content>Content</Content>
+            </Layout>
+            <Footer>Footer</Footer>
+          </Layout>
+
+          <Layout>
+            <Header>Header</Header>
+            <Layout>
+              <Content>Content</Content>
+              <Sider>Sider</Sider>
+            </Layout>
+            <Footer>Footer</Footer>
+          </Layout>
+
+          <Layout>
+            <Sider>Sider</Sider>
+            <Layout>
+              <Header>Header</Header>
+              <Content>Content</Content>
+              <Footer>Footer</Footer>
+            </Layout>
+          </Layout>
+        </div>
+
+      </HashRouter>
   );
 }
 
